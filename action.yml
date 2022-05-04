@@ -13,7 +13,7 @@ inputs:
     default: .
 outputs:
   zip_file:
-    description: 'Zip file'
+    description: 'Zip file (does not includes the extension)'
     value: ${{ steps.zip.outputs.zip_file }}
 runs:
   using: composite

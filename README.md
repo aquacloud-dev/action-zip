@@ -36,7 +36,7 @@ Zip Folder/Files
 
 | parameter | description |
 | - | - |
-| zip_file | Zip file |
+| zip_file | Zip file (does not includes the extension) |
 
 
 
