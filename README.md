@@ -2,11 +2,11 @@
 ```yaml
 steps:
     -
-		name: Zip Files
-		uses: aquacloud-dev/action-zip@main
-		with:
-			files: .next,public
-			output: dist.zip
+        name: Zip Files
+        uses: aquacloud-dev/action-zip@main
+        with:
+            files: .next,public
+            output: dist.zip
 ```
 
 
