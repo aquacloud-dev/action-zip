@@ -3,7 +3,7 @@
 steps:
     -
         name: Zip Files
-        uses: aquacloud-dev/zip-action@main
+        uses: aquacloud-dev/zip-action@v1
         with:
             files: .next,public
             output: dist.zip
