@@ -1,0 +1,26 @@
+name: Zip
+description: Zip Folder/Files
+inputs:
+  files:
+    description: 'Files to zip'
+    required: true
+  output:
+    description: Zip filename
+    required: true
+outputs:
+  zip_file:
+    description: 'Zip file'
+    value: ${{ steps.zip.outputs.zip_file }}
+runs:
+  using: composite
+  steps:
+    -
+      id: zip
+      name: Zip Files
+      shell: bash
+      run: |
+        # Prepare files list
+        FILES=$(echo ${{ inputs.files }} | tr "," "\n" | xargs)
+
+        zip -qq -r ${{ inputs.output }}.zip $FILES
+        echo ::set-output name=zip_file::${{ inputs.output }}.zip
