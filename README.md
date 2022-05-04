@@ -25,6 +25,7 @@ Zip Folder/Files
 | - | - | - | - |
 | files | Files to zip | `true` |  |
 | output | Zip filename | `true` |  |
+| context | Working Directory | `false` | . |
 
 
 
