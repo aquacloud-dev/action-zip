@@ -7,6 +7,10 @@ inputs:
   output:
     description: Zip filename
     required: true
+  context:
+    description: Working Directory
+    required: false
+    default: .
 outputs:
   zip_file:
     description: 'Zip file'
@@ -21,6 +25,11 @@ runs:
       run: |
         # Prepare files list
         FILES=$(echo ${{ inputs.files }} | tr "," "\n" | xargs)
+        ZIP_FILE="${{ inputs.output }}.zip"
 
-        zip -qq -r ${{ inputs.output }}.zip $FILES
-        echo ::set-output name=zip_file::${{ inputs.output }}.zip
+        cd ${{ inputs.context }}
+        zip -qq -r $ZIP_FILE $FILES
+
+        echo "::debug::$(unzip -l $ZIP_FILE)"
+
+        echo "::set-output name=zip_file::$ZIP_FILE"
