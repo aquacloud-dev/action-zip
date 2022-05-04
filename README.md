@@ -1,7 +1,7 @@
 # ZIP Action
 ```yaml
 steps:
-	-
+    -
 		name: Zip Files
 		uses: aquacloud-dev/action-zip@main
 		with:
